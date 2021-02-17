@@ -9,11 +9,14 @@ import backend.demo.service.ProductService;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
+//@RequestMapping("/api/v1")
 public class ProductController {
 
     @Autowired
     private ProductService productService;
+
 
     @GetMapping("/products")
     public ResponseEntity<List<Product>> getAllProducts(){

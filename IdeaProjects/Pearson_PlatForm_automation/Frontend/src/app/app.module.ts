@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,7 +11,14 @@ import { EditproductComponent } from './editproduct/editproduct.component';
 import { ViewproductComponent } from './viewproduct/viewproduct.component';
 import { MatTableModule } from '@angular/material/table';
 import { AddproductComponent } from './addproduct/addproduct.component';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule} from '@angular/material/button';
+import { CdkColumnDef } from '@angular/cdk/table';
+import {CdkTableModule} from '@angular/cdk/table';
+import {CdkTreeModule} from '@angular/cdk/tree';
+import {  MatPaginatorModule } from '@angular/material/paginator';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 @NgModule({
   declarations: [
@@ -18,7 +27,9 @@ import {MatButtonModule} from '@angular/material/button';
     ProductlistComponent,
     EditproductComponent,
     ViewproductComponent,
-    AddproductComponent
+    AddproductComponent,
+
+    
 
    
   ],
@@ -26,9 +37,16 @@ import {MatButtonModule} from '@angular/material/button';
     BrowserModule,
     AppRoutingModule,
     MatTableModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule,
+    CdkTableModule,
+    CdkTreeModule,
+    MatPaginatorModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    CdkColumnDef
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
