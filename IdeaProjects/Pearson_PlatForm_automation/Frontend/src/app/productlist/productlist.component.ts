@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
 import { NgserviceService } from "./../ngservice.service";
 import { Country } from "./../country";
-import { Router } from '@angular/router';
+import {  Router } from '@angular/router';
 import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
@@ -28,6 +28,9 @@ export class ProductlistComponent implements OnInit {
     private router: Router) {
   }
 
+
+
+
   ngOnInit(): void {
     this.reloadData();
   }
@@ -40,8 +43,22 @@ export class ProductlistComponent implements OnInit {
     });
   }
 
-  hi() {
-    console.log("hii");
+  async updateRow(id: number){
+    console.log(id)
+    this.router.navigate(['updatecountry', id]);
   }
 
+  async deleteRow(id: number){
+    this.ngservice.deleteCountry(id).subscribe( data => {
+      console.log(data);
+      if(data = "OK")
+      alert("Deleted Successfully !");
+      this.reloadData();
+    })
+
+  }
+
+  async addRow(){
+    this.router.navigate(['addcountry']);
+  }
 }

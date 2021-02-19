@@ -1,1 +1,15 @@
-<p>editproduct works!</p>
+<div class="example-container">
+    <div class="form-container">
+      <form  (submit)="submit(loginForm.value)" [formGroup]="loginForm" >
+        <mat-form-field class="form-field" appearance="standard">
+          <label> Update Your Country here...
+          </label>
+  
+          <input matInput formControlName="country_name" required >
+         
+        </mat-form-field>
+       
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
