@@ -8,5 +8,5 @@ For Platform Automation Internship - Practical Exam
 ## Frontend 
 
 * Run the Frontend folder ng serve .
-* It run on http://localhost:4200/countries .
+* It runs on http://localhost:4200/countries .
 
